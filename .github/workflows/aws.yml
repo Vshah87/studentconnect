@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 env:
   AWS_REGION: ap-south-1
-  s3_bucket: studentconnect-devops
+  S3_BUCKET: "studentconnect-devops"
 
 permissions:
   contents: read
@@ -30,7 +30,7 @@ jobs:
         
     - name: Copy single file
       run: |
-          aws s3 cp index.html s3://$${{ env.s3_bucket }}/index.html
+          aws s3 cp index.html s3://$${{ env.S3_BUCKET }}/index.html
           echo "Deployment done"
 
 
